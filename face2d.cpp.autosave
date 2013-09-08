@@ -1,0 +1,28 @@
+#include "face2d.h"
+#include "errorCodes.h"
+
+face::face(const std::vector<unsigned int> &verticesNums, int &error)
+{
+    if(verticesNums.size() > 4)
+    {
+        error = ERR_OUT_OF_RANGE;
+    }
+    else
+    {
+        m_verticesNums = verticesNums;
+        error = ERR_NO_ERROR;
+    }
+}
+
+bool face::VerticesNums(const std::vector<unsigned int> &verticesNums)
+{
+    if(verticesNums.size() > 4)
+        return false;
+    m_verticesNums = verticesNums;
+    return true;
+}
+
+std::list<unsigned int> face::VerticesNums()
+{
+    return m_verticesNums;
+}

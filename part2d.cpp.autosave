@@ -1,0 +1,25 @@
+#include "part2d.h"
+
+part::part()
+{
+}
+
+void part::vertices(const std::vector<vertexp> &vertices)
+{
+    m_vertices = vertices;
+}
+
+std::vector<vertexp> part::vertices()
+{
+    return m_vertices;
+}
+
+void part::faces(const std::vector<facep>& faces)
+{
+    m_faces = faces;
+}
+
+std::vector<facep> part::faces()
+{
+    return m_faces;
+}
